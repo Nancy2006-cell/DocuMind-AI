@@ -1,0 +1,32 @@
+# Node.js dependencies
+node_modules/
+
+# Environment variables and secrets
+.env
+.env.*
+!.env.example
+
+# Next.js
+.next/
+
+# Build output
+dist/
+build/
+
+# Python cache
+__pycache__/
+*.pyc
+
+# Python virtual environments
+venv/
+.venv/
+
+# ChromaDB local database
+chroma_db/
+
+# Logs
+*.log
+
+# OS files
+.DS_Store
+Thumbs.db
