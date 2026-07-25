@@ -7,6 +7,7 @@ import connectDB from "./config/db.js";
 import uploadRoutes from "./routes/uploadRoutes.js";
 import chatRoutes from "./routes/chatRoutes.js";
 import historyRoutes from "./routes/historyRoutes.js";
+import path from "path";
 
 dotenv.config();
 
@@ -20,7 +21,10 @@ app.use(express.json());
 
 app.use(express.urlencoded({ extended: true }));
 
-app.use("/uploads", express.static("uploads"));
+app.use(
+    "/uploads",
+    express.static(path.join(process.cwd(), "uploads"))
+);
 
 app.use("/api/upload", uploadRoutes);
 

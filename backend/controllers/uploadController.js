@@ -22,6 +22,7 @@ export const uploadPDF = async (req, res) => {
     console.log("========== EXTRACTION COMPLETE ==========");
 
     // Save PDF information in MongoDB
+    const pdfUrl = `${process.env.SERVER_URL}/uploads/${req.file.filename}`;
     const pdf = await Pdf.create({
       originalName: req.file.originalname,
       filename: req.file.filename,
