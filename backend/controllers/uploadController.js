@@ -30,6 +30,8 @@ export const uploadPDF = async (req, res) => {
       extractedText,
     });
 
+    console.log("✅ PDF SAVED:", pdf);
+
     res.status(201).json({
       success: true,
       message: "PDF uploaded successfully",
