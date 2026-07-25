@@ -62,15 +62,12 @@ export default function ChatPage() {
 
   const fetchHistory = async () => {
     try {
-      const res = await axios.get(
-        `${process.env.NEXT_PUBLIC_API_URL}/api/history`,
-        {
-          params: {
-            pdfId: currentPDF._id
-          }
-        }
-      );
-
+      const res = await axios.get(`${process.env.NEXT_PUBLIC_API_URL}/api/history`,{
+        params: {
+          pdfId: currentPDF._id,
+        },
+      }
+    );
       const chats = res.data.chats;
 
       if (chats.length === 0) {
