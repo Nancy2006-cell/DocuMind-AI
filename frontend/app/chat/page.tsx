@@ -62,49 +62,51 @@ export default function ChatPage() {
 
   const fetchHistory = async () => {
     try {
-      const res = await axios.get(`${process.env.NEXT_PUBLIC_API_URL}/api/history`,{
-        params: {
-          pdfId: currentPDF._id,
-        },
-      }
-    );
-      const chats = res.data.chats;
+      const res = await axios.get(
+        `${process.env.NEXT_PUBLIC_API_URL}/api/history`,
+        {
+          params: {
+            pdfId: currentPDF._id,
+          },
+        }
+      );
+    
+    type Chat = {
+      question: string;
+      answer: string;
+    };
 
-      if (chats.length === 0) {
-        setMessages([
-          {
-            role: "assistant",
-            text: "Hello! I'm DocuMind AI. Upload a PDF and ask me anything."
-          }
-        ]);
-        return;
-      }
+    const chats: Chat[] = res.data.chats;
 
-      const history: ChatMessage[] = [];
-
-      type Chat = {
-        question: string;
-        answer: string;
-      };
-
-      chats.forEach((chat: any) => {
-        history.push({
-          role: "user",
-          text: chat.question
-        });
-
-        history.push({
+    if (chats.length === 0) {
+      setMessages([
+        {
           role: "assistant",
-          text: chat.answer
-        });
+          text: "Hello! I'm DocuMind AI. Upload a PDF and ask me anything.",
+        },
+      ]);
+      return;
+    }
+
+    const history: ChatMessage[] = [];
+
+    chats.forEach((chat) => {
+      history.push({
+        role: "user",
+        text: chat.question,
       });
 
-      setMessages(history);
-    } catch (error) {
-      console.log(error);
-    }
-  };
+      history.push({
+        role: "assistant",
+        text: chat.answer,
+      });
+    });
 
+    setMessages(history);
+  } catch (error) {
+    console.log(error);
+  }
+};
   // -----------------------------
   // Fetch Latest PDF
   // -----------------------------
