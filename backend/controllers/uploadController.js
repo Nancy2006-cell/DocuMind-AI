@@ -26,7 +26,7 @@ export const uploadPDF = async (req, res) => {
     const pdf = await Pdf.create({
       originalName: req.file.originalname,
       filename: req.file.filename,
-      path: req.file.path,
+      path: pdfUrl,
       size: req.file.size,
       extractedText,
     });
