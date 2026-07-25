@@ -140,7 +140,7 @@ export default function DashboardPage() {
                 key={pdf._id}
                 id={pdf._id}
                 fileName={pdf.originalName}
-                filename={pdf.filename}
+                pdfUrl={pdf.filename}
                 date={new Date(pdf.createdAt).toLocaleDateString()}
                 onDelete={() => deletePDF(pdf._id)}
               />
