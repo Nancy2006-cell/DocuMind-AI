@@ -11,6 +11,7 @@ type Pdf = {
   _id: string;
   originalName: string;
   filename: string;
+  path: string,
   size: number;
   createdAt: string;
 };
@@ -140,7 +141,7 @@ export default function DashboardPage() {
                 key={pdf._id}
                 id={pdf._id}
                 fileName={pdf.originalName}
-                pdfUrl={pdf.filename}
+                pdfUrl={pdf.path}
                 date={new Date(pdf.createdAt).toLocaleDateString()}
                 onDelete={() => deletePDF(pdf._id)}
               />
