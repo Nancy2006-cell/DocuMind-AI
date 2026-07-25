@@ -54,7 +54,7 @@ export default function ChatPage() {
     if (currentPDF._id) {
       fetchHistory();
     }
-  }, [currentPDF]);
+  }, [currentPDF._id]);
 
   // -----------------------------
   // Fetch History
@@ -81,6 +81,11 @@ export default function ChatPage() {
       }
 
       const history: ChatMessage[] = [];
+
+      type Chat = {
+        question: string;
+        answer: string;
+      };
 
       chats.forEach((chat: any) => {
         history.push({

@@ -1,7 +1,7 @@
 type StatCardProps = {
-  title: String;
-  value: String;
-  icon: String;
+  title: string;
+  value: string;
+  icon: string;
 };
 
 export default function StatCard({
@@ -19,5 +19,5 @@ export default function StatCard({
         {value}
       </p>
     </div>
-  );
+  )
 }

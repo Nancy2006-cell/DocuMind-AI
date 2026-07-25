@@ -52,7 +52,7 @@ export default function Testimonials() {
               </p>
 
               <p className="mt-6 italic text-slate-300">
-                "{testimonial.review}"
+                &ldquo;{testimonial.review}&rdquo;
               </p>
 
               <div className="mt-8">
