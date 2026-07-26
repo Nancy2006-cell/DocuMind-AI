@@ -5,14 +5,11 @@
 
 # 🤖 DocuMind AI - Intelligent PDF Chat Assistant
 
-
+[![Live Demo](https://img.shields.io/badge/Live-Demo-blue?style=for-the-badge)](https://docu-mind-ai-azure.vercel.app)
 
 ## 🌐 Live Demo
 
-**Frontend:** *(Coming Soon)*
-
-**Backend API:** *(Coming Soon)*
-
+**Frontend:** https://docu-mind-ai-azure.vercel.app
 
 
 ## 🌟 Overview
